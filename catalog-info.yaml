@@ -6,7 +6,7 @@ metadata:
   # Example for optional annotations
   annotations:
     circleci.com/project-slug: https://app.circleci.com/pipelines/github/dhanu0001/backstage-demo
-    github.com/project-slug: dhanu0001/backstage-demo
+    #github.com/project-slug: dhanu0001/backstage-demo
     backstage.io/techdocs-ref: dir:.
 spec:
   type: service
