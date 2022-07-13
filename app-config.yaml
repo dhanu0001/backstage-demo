@@ -65,8 +65,8 @@ proxy:
   '/circleci/api':
     target: https://circleci.com/api/v1.1
     headers:
-      Circle-Token: f95e55540321af6770472e8a5853e631d9c4c1e5
-
+      Circle-Token: 6f957f934a8f30d1da89b87a800e38640dbc9e08
+      
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
 # and an external cloud storage when deploying TechDocs for production use-case.
