@@ -6,8 +6,8 @@ metadata:
   # Example for optional annotations
   annotations:
     circleci.com/project-slug: github/dhanu0001/backstage-demo
-    #github.com/project-slug: ShikhaVashishtha/backstage-demo
-    #backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: ShikhaVashishtha/backstage-demo
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   owner: user:dhanu0001
