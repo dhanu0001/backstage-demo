@@ -5,9 +5,9 @@ metadata:
   description: An example of a Backstage application.
   # Example for optional annotations
   annotations:
-    circleci.com/project-slug: github/dhanu0001/backstage-demo
-    #github.com/project-slug: dhanu0001/backstage-demo
-    #backstage.io/techdocs-ref: dir:.
+    circleci.com/project-slug: github/ShikhaVashishtha/backstage-demo
+    github.com/project-slug: ShikhaVashishtha/backstage-demo
+    backstage.io/techdocs-ref: dir:.
 spec:
   type: service
   owner: user:dhanu0001
