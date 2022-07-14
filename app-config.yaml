@@ -48,7 +48,7 @@ backend:
 integrations:
   github:
     - host: github.com
-      token: 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
+      token: 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
       # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
       # about setting up the GitHub integration here: https://backstage.io/docs/getting-started/configuration#setting-up-a-github-integration
       # token: ${GITHUB_TOKEN}
@@ -61,7 +61,7 @@ proxy:
   '/circleci/api':
     target: https://circleci.com/api/v1.1
     headers:
-      Circle-Token: 6f957f934a8f30d1da89b87a800e38640dbc9e08
+      Circle-Token: 1879155f9f6f51d305a2a1c5a387cb08c4f2c886
       
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
