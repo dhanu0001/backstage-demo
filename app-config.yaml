@@ -48,7 +48,7 @@ backend:
 integrations:
   github:
     - host: github.com
-      token: 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
+      token: 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
       # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
       # about setting up the GitHub integration here: https://backstage.io/docs/getting-started/configuration#setting-up-a-github-integration
       # token: ${GITHUB_TOKEN}
