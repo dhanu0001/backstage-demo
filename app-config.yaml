@@ -32,14 +32,14 @@ backend:
   # This is for local developement only, it is not recommended to use this in production
   # The production database configuration is stored in app-config.production.yaml
   database:
-    # client: better-sqlite3
-    # connection: ':memory:'
-    client: pg
-    connection:
-      host: 127.0.0.1
-      port: 5432
-      user: postgres
-      password: secret
+     client: better-sqlite3
+     connection: ':memory:'
+    #client: pg
+    #connection:
+    #  host: 127.0.0.1
+    #  port: 5432
+    #  user: postgres
+    #  password: secret
 
   cache:
     store: memory
@@ -48,7 +48,7 @@ backend:
 integrations:
   github:
     - host: github.com
-      token: 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
+      token: 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
       # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
       # about setting up the GitHub integration here: https://backstage.io/docs/getting-started/configuration#setting-up-a-github-integration
       # token: ${GITHUB_TOKEN}
@@ -61,7 +61,7 @@ proxy:
   '/circleci/api':
     target: https://circleci.com/api/v1.1
     headers:
-      Circle-Token: 1879155f9f6f51d305a2a1c5a387cb08c4f2c886
+      Circle-Token: 6b5be93dae6922793e42c7f601b2ff5cc2a6ee7c
       
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
@@ -96,8 +96,8 @@ auth:
   providers: 
     github:
       development:
-        clientId: 5da1e90f488571379114
-        clientSecret: ea80f323fda00137ec727351c9aade60d23981fe
+        clientId: c7ac19ad6e4657fc70f7
+        clientSecret: 046863844b43a7e9420299feab586cfa1474542b
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
