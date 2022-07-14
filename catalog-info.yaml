@@ -9,6 +9,6 @@ metadata:
 #     github.com/project-slug: ShikhaVashishtha/backstage-demo
  #   backstage.io/techdocs-ref: dir:.
 spec:
-  type: website
+  type: service
   owner: user:dhanu0001
   lifecycle: experimental
