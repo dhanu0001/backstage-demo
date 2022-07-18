@@ -46,6 +46,10 @@ import {
   EntityGithubActionsContent,
 } from '@backstage/plugin-github-actions';
 import {
+  EntityCircleCIContent,
+  isCircleCIAvailable,
+} from '@backstage/plugin-circleci';
+import {
   EntityUserProfileCard,
   EntityGroupProfileCard,
   EntityMembersListCard,
