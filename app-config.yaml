@@ -5,16 +5,13 @@ app:
 organization:
   name: My Company
 
-# permission:
-#   enabled: true
-
 backend:
   # Used for enabling authentication, secret is shared by all backend plugins
   # See https://backstage.io/docs/tutorials/backend-to-backend-auth for
   # information on the format
   # auth:
   #   keys:
-  #     - secret: lEdossopmElA2hQhsajwebEu/g2LC30c
+  #     - secret: ${BACKEND_SECRET}
   baseUrl: http://localhost:7007
   listen:
     port: 7007
@@ -32,15 +29,8 @@ backend:
   # This is for local developement only, it is not recommended to use this in production
   # The production database configuration is stored in app-config.production.yaml
   database:
-    # client: better-sqlite3
-    # connection: ':memory:'
-    client: pg
-    connection:
-      host: 127.0.0.1
-      port: 5432
-      user: postgres
-      password: secret
-
+    client: better-sqlite3
+    connection: ':memory:'
   cache:
     store: memory
   # workingDirectory: /tmp # Use this to configure a working directory for the scaffolder, defaults to the OS temp-dir
@@ -48,51 +38,39 @@ backend:
 integrations:
   github:
     - host: github.com
-      token: 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
       # This is a Personal Access Token or PAT from GitHub. You can find out how to generate this token, and more information
       # about setting up the GitHub integration here: https://backstage.io/docs/getting-started/configuration#setting-up-a-github-integration
-      # token: ${GITHUB_TOKEN}
-      ### Example for how to add your GitHub Enterprise instance using the API:
-      # - host: ghe.example.net
-      #   apiBaseUrl: https://ghe.example.net/api/v3
-      #   token: ${GHE_TOKEN}
+      token: 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
+    ### Example for how to add your GitHub Enterprise instance using the API:
+    # - host: ghe.example.net
+    #   apiBaseUrl: https://ghe.example.net/api/v3
+    #   token: ${GHE_TOKEN}
 
 proxy:
   '/circleci/api':
     target: https://circleci.com/api/v1.1
     headers:
-      Circle-Token: 1879155f9f6f51d305a2a1c5a387cb08c4f2c886
+      Circle-Token: 6b5be93dae6922793e42c7f601b2ff5cc2a6ee7c
 
 # Reference documentation http://backstage.io/docs/features/techdocs/configuration
 # Note: After experimenting with basic setup, use CI/CD to generate docs
 # and an external cloud storage when deploying TechDocs for production use-case.
 # https://backstage.io/docs/features/techdocs/how-to-guides#how-to-migrate-from-techdocs-basic-to-recommended-deployment-approach
 techdocs:
-  # requestUrl: http://localhost:7000/api/techdocs
-  # storageUrl: http://localhost:7000/api/techdocs/static/docs
   builder: 'local' # Alternatives - 'external'
   generator:
-    runIn: 'docker' # Alternatives - 'docker'
-    dockerImage: 'spotify/techdocs'
-    pullImage: true
+    runIn: 'docker' # Alternatives - 'local'
   publisher:
-#     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
-    type: 'awsS3'
-    awsS3:
-      bucketName: 'sakstest'
-      region: ap-south-1
-      credentials:
-        accessKeyId: AKIA23PESRF6STVCXAFR
-        secretAccessKey: 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
+    type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
 auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
   environment: development
-  providers: 
+  providers:
     github:
       development:
-        clientId: c7ac19ad6e4657fc70f7
-        clientSecret: 046863844b43a7e9420299feab586cfa1474542b
+        clientId:	a026921af05d511437ec
+        clientSecret:	1dc39525fc648993acbf5479781a811d5df051b7
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
@@ -119,12 +97,6 @@ catalog:
       target: ../../examples/org.yaml
       rules:
         - allow: [User, Group]
-
-    # #Import from github 
-    # - type: url
-    #   target: https://github.com/ShikhaVashishtha
-    #   rules:
-    #     - allow: [User, Group]
 
     ## Uncomment these lines to add more example data
     # - type: url
