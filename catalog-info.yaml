@@ -6,7 +6,7 @@ metadata:
   # Example for optional annotations
   annotations:
     circleci.com/project-slug: github/dhanu0001/backstage-demo
-    datadoghq.com/dashboard-url: https://app.datadoghq.com/ci/pipelines/EgDpBRnM5Fob/say-hello-workflow/none/main?query=env%3Anone%20%40git.repository.id%3A%22github.com%2Fdhanu0001%2Fbackstage-demo%22%20%40ci.pipeline.name%3Asay-hello-workflow%20%40ci.provider.instance%3Acircleci%20%40git.branch%3Amain&index=cipipeline&start=1657638091387&end=1658242891387&paused=false
+    datadoghq.com/dashboard-url: https://p.datadoghq.com/sb/6dd69ce8-06a0-11ed-ab53-da7ad0900002-9968fd472c11c9a48674258f2d69fd8f
     #github.com/project-slug: dhanu0001/backstage-demo
     backstage.io/techdocs-ref: dir:.
     
