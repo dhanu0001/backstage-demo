@@ -6,7 +6,7 @@ metadata:
   # Example for optional annotations
   annotations:
     circleci.com/project-slug: github/dhanu0001/backstage-demo
-    datadoghq.com/site: https://app.datadoghq.com/help/quick_start
+    datadoghq.com/dashboard-url: https://app.datadoghq.com/help/quick_start
     #datadoghq.com/dashboard-url: https://app.datadoghq.com/dash/integration/30516/ci-visibility---pipelines-dashboard?from_ts=1658159941286&to_ts=1658246341286&live=true
     #github.com/project-slug: dhanu0001/backstage-demo
     backstage.io/techdocs-ref: dir:.
