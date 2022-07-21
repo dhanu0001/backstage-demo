@@ -9,8 +9,8 @@ metadata:
     #datadoghq.com/dashboard-url: https://p.datadoghq.com/sb/6dd69ce8-06a0-11ed-ab53-da7ad0900002-9968fd472c11c9a48674258f2d69fd8f
     datadoghq.com/dashboard-url: https://p.datadoghq.com/sb/6dd69ce8-06a0-11ed-ab53-da7ad0900002-1e23bbc02814bcd6ae6cf25e7a93541d
     #datadoghq.com/dashboard-url: https://app.datadoghq.com/dash/integration/30516/ci-visibility---pipelines-dashboard?from_ts=1658159941286&to_ts=1658246341286&live=true
-    github.com/project-slug: dhanu0001/backstage-demo
-    jira/project-key: SAKS
+    #github.com/project-slug: dhanu0001/backstage-demo
+    #jira/project-key: SAKS
     backstage.io/techdocs-ref: dir:.
     
 spec:
