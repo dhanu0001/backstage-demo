@@ -9,7 +9,7 @@ metadata:
     - techdocs
     - mkdocs
 spec:
-  owner: dhanu0001
+  owner: backstage/techdocs-core
   type: documentation
 
   parameters:
