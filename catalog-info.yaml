@@ -7,6 +7,7 @@ metadata:
   annotations:
     circleci.com/project-slug: github/dhanu0001/backstage-demo
     github.com/project-slug: dhanu0001/backstage-demo
+    datadoghq.com/dashboard-url: https://p.datadoghq.com/sb/dcafc21c-4ee4-11ec-a604-da7ad0900002-40c4a7dd244bf26002b6b8f2d3591d0a
  #   backstage.io/techdocs-ref: dir:.
 spec:
   type: service
