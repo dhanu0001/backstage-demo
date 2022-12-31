@@ -1,71 +1,47 @@
-version: 2.1
+version: 2
 jobs:
-  build-modules:
+  build:
     docker:
-      - image: circleci/node:10.16.3
-    steps:
-      - checkout
-      - run: npm install
-      - persist_to_workspace:
-            root: .
-            paths:
-              - node_modules
-  unit-test:
-    docker:
-      - image: circleci/node:10.16.3
-    working_directory: ~/file
-    steps:
-      - checkout
-      - attach_workspace:
-          at: .
-      - run: npm test
-  build-and-push:
-    executor: docker/docker
-    steps:
-      - setup_remote_docker
-      - checkout
-      - docker/check
-      - docker/build:
-          image: backstage:latest
-          tag: "latest,$CIRCLE_SHA1"
-      - docker/push:
-          digest-path: /tmp/digest.txt
-          image: backstage:latest
-          tag: "latest,$CIRCLE_SHA1"
-      - run:
-          command: |
-            echo "Digest is: ${</tmp/digest.txt}"
-            echo "testing!!!"
-  deploy:
-    docker:
-      - image: circleci/python:3.7
-    steps:
-      - checkout
-      - run:
-         name: install dependencies
-         command: |
-            pip install ecs-deploy
-      - run:
-          name: deploy
-          command: |
-            ecs deploy $ECS CLUSTER NAME $ECS SERVICE  --image website-service anju001/backstage:latest:$CIRCLE SHA1 --timeout 1200 --ignore-warnings --region $AWS REGION
-orbs:
-  docker: circleci/docker@1.4.0
+      - image: node:11.10.1
+      - image: cimg/postgres:15.1.0
+        environment:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: example12
+      - image: redis:latest
 
-workflows:
-  version: 2
-  test:
-    jobs:
-      - build-modules
-      - unit-test:
-          requires:
-            - build-modules
-      - build-and-push:
-          filters:
-            branches:
-              only: main
-          requires:
-            - unit-test
-      - deploy:
-          requires:
-            - build-and-push 
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      # run tests!
+      - run: yarn ci:test
+
+      - setup_remote_docker:
+          docker_layer_caching: true
+
+      - run:
+          name: Install Docker client
+          command: |
+            set -x
+            VER="18.06.3-ce"
+            curl -L -o /tmp/docker-$VER.tgz https://download.docker.com/linux/static/stable/x86_64/docker-$VER.tgz
+            tar -xz -C /tmp -f /tmp/docker-$VER.tgz
+            mv /tmp/docker/* /usr/bin
+
+      - run: yarn ci:docker
