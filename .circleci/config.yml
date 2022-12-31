@@ -3,6 +3,7 @@ jobs:
   build-modules:
     docker:
       - image: circleci/node:10.16.3
+    steps:
       - checkout
       - run: npm install
       - persist_to_workspace:
@@ -62,7 +63,7 @@ workflows:
       - build-and-push:
           filters:
             branches:
-              only: master
+              only: main
           requires:
             - unit-test
       - deploy:
