@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: node:11.10.1
-      - image: cimg/postgres:15.1.0
+      - image: cimg/postgres:15.1.0-postgis
         environment:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
