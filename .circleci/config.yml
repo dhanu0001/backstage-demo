@@ -13,12 +13,12 @@ jobs:
   unit-test:
     docker:
       - image: circleci/node:10.16.3
-    working_directory: ~/files
+    working_directory: ~/file
     steps:
       - checkout
       - attach_workspace:
           at: .
-      - run: npm test
+#      - run: npm test
   build-and-push:
     executor: docker/docker
     steps:
