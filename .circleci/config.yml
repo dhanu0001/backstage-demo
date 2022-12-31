@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build-modules:
     docker:
-      - image: circleci/node:10.16.3
+      - image: circleci/node:16.19.0
     steps:
       - checkout
       - run: npm install
@@ -12,13 +12,13 @@ jobs:
               - node_modules
   unit-test:
     docker:
-      - image: circleci/node:10.16.3
+      - image: circleci/node:16.19.0
     working_directory: ~/file
     steps:
       - checkout
       - attach_workspace:
           at: .
-#      - run: npm test
+      - run: npm test
   build-and-push:
     executor: docker/docker
     steps:
