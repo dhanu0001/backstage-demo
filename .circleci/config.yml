@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build-modules:
     docker:
-      - image: cimg/node:19.3.0
+      - image: cimg/node:15.0.1-browsers
     steps:
       - checkout
       - run: npm install
@@ -12,7 +12,7 @@ jobs:
               - node_modules
   unit-test:
     docker:
-      - image: cimg/node:19.3.0
+      - image: cimg/node:15.0.1-browsers
     working_directory: ~/file
     steps:
       - checkout
