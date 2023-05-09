@@ -9,4 +9,5 @@ Additionally it builds a codepipeline called the `backstage-app-pipline` which b
 The infra pipeline stack creates a codepipeline to both update itself and to deploy the backstage stack described above. This set of infrastructure code is self-updating and self-healing, and requires no manual intervention after the initial manual deployment of the infra-pipeline stack.
 
 ## Diagram
-![Image of Architecture](./assets/arch.png)
+![image](https://user-images.githubusercontent.com/92109752/237058800-a6fda95f-e2ef-4373-84ec-8695d7be7822.png)
+
