@@ -3,6 +3,7 @@ site_description: 'TechDoc site desc'
 
 nav:
   - Introduction: index.md
+  - Pipelines Description: pipelines.md
 
 plugins:
   - techdocs-core
