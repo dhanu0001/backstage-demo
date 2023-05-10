@@ -1,7 +1,7 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: backstage-demo
+  name: backstage-project
   description: An example of a Backstage application.
   # Example for optional annotations
   annotations:
@@ -15,5 +15,5 @@ metadata:
     
 spec:
   type: service
-  owner: user:dhanu0001
+  owner: user:Dhanujaya Reddy
   lifecycle: experimental
